@@ -1,0 +1,17 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "a",
+  "main": "index.js",
+  "scripts": {
+    "test": "a"
+  },
+  "author": "dawdaw",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "eventproxy": "^0.3.4",
+    "express": "^4.14.0",
+    "superagent": "^2.0.0"
+  }
+}
