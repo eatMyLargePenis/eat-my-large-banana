@@ -6,6 +6,7 @@ var app = express();
 var url = require("url");
 var cnodeUrl = "https://cnodejs.org/";
 app.get("/",function(req,res,next){
+    var mainres = res;
     superagent.get(cnodeUrl)
       .end(function (err, res) {
         if (err) {
@@ -31,10 +32,8 @@ app.get("/",function(req,res,next){
               href: topicUrl,
               comment1: $('.reply_content').eq(0).text().trim(),
             });
-          });
-
-          console.log('final:');
-          console.log(topics);
+          }); 
+          mainres.send(topics);
         });
 
         topicUrls.forEach(function (topicUrl) {
@@ -46,6 +45,5 @@ app.get("/",function(req,res,next){
         });
       });
 });
-app.listen(3001,function(req,res){
-    console.log("wcccc");
+app.listen(process.env.PORT || 3001,function(req,res){
 });
