@@ -34,7 +34,8 @@ app.get("/",function(req,res,next){
             });
           }); 
           mainres.send(topics);
-        });
+          console.log(topics);
+        });   
 
         topicUrls.forEach(function (topicUrl) {
           superagent.get(topicUrl)
